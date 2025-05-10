@@ -1,0 +1,20 @@
+[project]
+name = "kobackupdec"
+version = "0.0.1"
+description = "Huawei backup decryptor"
+authors = [
+    { name = "RealityNet" },
+    { name = "wangyw15", email = "wangyanwei15@outlook.com" },
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pycryptodome>=3.22.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+kobackupdec = "kobackupdec:main"

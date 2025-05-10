@@ -916,7 +916,7 @@ def decrypt_media(password, path_in, path_out, expandtar):
 
 # --- main --------------------------------------------------------------------
 
-def main(password, backup_path_in, dest_path_out, expandtar, writable):
+def decrypt_main(password, backup_path_in, dest_path_out, expandtar, writable):
 
     logging.info('searching backup in [%s]', backup_path_in)
 
@@ -965,8 +965,7 @@ def main(password, backup_path_in, dest_path_out, expandtar, writable):
 
 # --- entry point and parameters checks ---------------------------------------
 
-if __name__ == '__main__':
-
+def main():
     if sys.version_info[0] < 3:
         sys.exit('Python 3 or a more recent version is required.')
     elif sys.version_info[1] < 7:
@@ -1010,4 +1009,4 @@ if __name__ == '__main__':
     # Make directory with read and execute permission (=read and traverse)
     dest_path.mkdir(0o755, parents=True)
 
-    main(user_password, backup_path, dest_path, args.expandtar, args.writable)
+    decrypt_main(user_password, backup_path, dest_path, args.expandtar, args.writable)
